@@ -13,12 +13,12 @@ import javax.swing.JOptionPane;
 
 public class Game {
 
+	//private instance variables
 	private static JFrame f; 
-	
 	private static ArrayList<JButton> buttons = new ArrayList<JButton>();
-	
 	private static String winner = null;
 	
+	// This initializes the layout for the grid
 	private static void MyGridLayout(){  
 		
 	    f = new JFrame();  
@@ -45,14 +45,14 @@ public class Game {
 	    f.add(b1);f.add(b2);f.add(b3);f.add(b4);f.add(b5);  
 	    f.add(b6);f.add(b7);f.add(b8);f.add(b9);  
 	  
-	    f.setLayout(new GridLayout(3,3));  
-	    //setting grid layout of 3 rows and 3 columns  
+	    f.setLayout(new GridLayout(3,3));   
 	  
 	    f.setSize(300,300);  
 	    f.setVisible(true);  
 	    
 	}  
 	
+	//main method starts game
 	public static void main(String[] args) {  
 		
 		infoBox("Player 1 Is X, Player 2 is O", "Tic Tac Toe", false);
@@ -64,9 +64,12 @@ public class Game {
 	    
 	    playGame(player1, player2);
 	    
-	    
 	}  
 	
+	/* This method starts the game. Listens for button actions and responds accordingly.
+	 * @Param Player p1 the first player.
+	 * @Param Player p2 the second player.
+	 */
 	private static void playGame(Player p1, Player p2) {
 		
 		for (JButton b : buttons) {
@@ -98,9 +101,9 @@ public class Game {
 				}
 			});
 		}	
-		
 	}
 	
+	//This method restarts the game when called.
 	private static void restartGame() {
 		
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -116,9 +119,13 @@ public class Game {
 	    Player player2 = new Player(false, "O");
 	    
 	    playGame(player1, player2);
-		
+	    
 	}
 	
+	/* This method checks for a player win.
+	 * @Return True (A player won).
+	 * @Return False (No player has won).
+	 */
 	private static boolean testCases() {
 		
 		if (buttons.get(0).getText() == "x" && buttons.get(1).getText() == "x" && buttons.get(2).getText() == "x" ) {
@@ -205,6 +212,11 @@ public class Game {
 		return false;
 	}
 	
+	/* This method creates different option panes depending on paramaters given.
+	 * @Param infoMessage The message to tell the user.
+	 * @Param titleBar The title of the messageBox.
+	 * @Param confirm Boolean indicating which box to present the user.
+	 */
 	private static void infoBox(String infoMessage, String titleBar, boolean confirm)
     {
 		if (confirm) {
