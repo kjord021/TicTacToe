@@ -89,7 +89,7 @@ public class Game {
 					if (testCases()) {
 						
 						if (winner == "tie") {
-							infoBox("You have Tied!. Would you like to play again?", "Tic Tac Toe", true);
+							infoBox("You have Tied! Would you like to play again?", "Tic Tac Toe", true);
 						}
 						else {
 							infoBox("Winner is " + winner + ". Would you like to play again?", "Tic Tac Toe", true);
