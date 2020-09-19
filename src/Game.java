@@ -134,7 +134,6 @@ public class Game {
 			return true;
 		}
 		else if (buttons.get(0).getText() == "x" && buttons.get(3).getText() == "x" && buttons.get(6).getText() == "x" ) {
-			System.out.println("Case 4 x");
 			winner = "x";
 			return true;
 		}
@@ -151,7 +150,6 @@ public class Game {
 			return true;
 		}
 		else if (buttons.get(2).getText() == "x" && buttons.get(4).getText() == "x" && buttons.get(6).getText() == "x" ) {
-			System.out.println("Case 8 x");
 			winner = "x";
 			return true;
 		}
